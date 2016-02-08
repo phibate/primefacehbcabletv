@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<title>Login</title>
+</h:head>
+<h:form>
+	<p:growl id="messages"></p:growl>
+	<p:panelGrid columns="2">
+		<p:outputLabel value="Enter Package Code:"></p:outputLabel>
+		<p:inputText value="#{packageController.packages.code}"></p:inputText>
+		<p:outputLabel value="Enter Package Name:"></p:outputLabel>
+		<p:inputText value="#{packageController.packages.name}"></p:inputText>
+		<p:outputLabel value="Enter Price:"></p:outputLabel>
+		<p:inputText value="#{packageController.packages.price}"></p:inputText>
+		<p:outputLabel value="Enter Description:"></p:outputLabel>
+		<p:inputText value="#{packageController.packages.description}"></p:inputText>
+		<p:outputLabel value="Choose Start Date:"></p:outputLabel>
+		<p:calendar value="#{packageController.packages.startDate}"></p:calendar>
+		<p:outputLabel value="Choose End Date:"></p:outputLabel>
+		<p:calendar value="#{packageController.packages.endDate}"></p:calendar>
+		
+	</p:panelGrid>
+	<p:commandButton value="Register" action="#{packageController.addPackage}" update="@form" />
+	
+<!-- 	<p:dataTable var="department" value="#{registerEmployee.employees}"> -->
+<!--     <p:column headerText="ID"> -->
+<!--         <h:outputText value="#{department.empId}" /> -->
+<!--     </p:column> -->
+ 
+<!--     <p:column headerText="Name"> -->
+<!--         <h:outputText value="#{department.empName}" /> -->
+<!--     </p:column> -->
+ 
+<!--     <p:column headerText="Hire date"> -->
+<!--         <h:outputText value="#{department.empHireDate}" /> -->
+<!--     </p:column> -->
+ 
+<!--     <p:column headerText="Salary"> -->
+<!--         <h:outputText value="#{department.empSalary}" /> -->
+<!--     </p:column> -->
+<!-- 	</p:dataTable> -->
+</h:form>
+</html>

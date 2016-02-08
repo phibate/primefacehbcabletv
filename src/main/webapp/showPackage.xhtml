@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<title>Show Package</title>
+</h:head>	
+<h:form>
+	
+	<p:dataTable var="cabletv" value="#{packageController.packageCTVs}">
+    <p:column headerText="Package ID">
+        <h:outputText value="#{cabletv.packageId}" />
+    </p:column>
+ 
+    <p:column headerText="Code">
+        <h:outputText value="#{cabletv.code}" />
+    </p:column>
+ 
+    <p:column headerText="Name">
+        <h:outputText value="#{cabletv.name}" />
+    </p:column>
+    
+    <p:column headerText="Price">
+        <h:outputText value="#{cabletv.price}" />
+    </p:column>
+    
+    <p:column headerText="Description">
+        <h:outputText value="#{cabletv.description}" />
+    </p:column>
+    
+    <p:column headerText="Start date">
+        <h:outputText value="#{cabletv.startDate}" />
+    </p:column>
+ 
+    <p:column headerText="End date">
+        <h:outputText value="#{cabletv.endDate}" />
+    </p:column>
+    
+    <p:column headerText="Action">
+       	<p:commandButton value="Delete This Package" action="#{packageController.deletePackage}" update="@form" >
+       		<f:setPropertyActionListener value="#{cabletv}" target="#{packageController.packageCTV}" />
+       	</p:commandButton>
+    </p:column>
+
+	</p:dataTable>
+	
+</h:form>
+</html>
